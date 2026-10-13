@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+
+  <div class="auth-wrapper">
+    <div class="auth-logo">M</div>
+    <h1 class="auth-heading">Create Account</h1>
+    <p class="auth-sub">Sign up to start organizing your work.</p>
+
+    <div class="auth-card">
+      <h2>Register a new account</h2>
+      <p class="card-sub">Fill in the details below to get started.</p>
+
+      <form id="registerForm" novalidate>
+        <div class="mb-3">
+          <label for="fullname" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullname" placeholder="Your full name" required>
+          <div class="form-error" id="nameError">Please enter your name.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+          <div class="form-error" id="emailError">Please enter a valid email address.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <div class="password-box">
+            <input type="password" class="form-control" id="password" placeholder="At least 6 characters" required>
+            <button type="button" class="toggle-password" data-target="password">Show</button>
+          </div>
+          <div class="form-error" id="passwordError">Password must be at least 6 characters.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="confirm" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirm" placeholder="Re-enter your password" required>
+          <div class="form-error" id="confirmError">Passwords do not match.</div>
+        </div>
+
+        <button type="submit" class="btn btn-auth">Sign Up</button>
+
+        <p class="auth-switch">Already have an account? <a href="login.html" class="auth-link">Sign in</a></p>
+      </form>
+    </div>
+
+    <p class="auth-copy">&copy; 2026 My Website. All rights reserved.</p>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

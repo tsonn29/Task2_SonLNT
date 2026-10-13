@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand site-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Management System</a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="login.html">Login</a></li>
+            <li><a class="dropdown-item" href="register.html">Sign Up</a></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#helpModal">Help</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <div class="container">
+      <div class="welcome-box">
+        <h1>Welcome to My Website</h1>
+        <p>Learn web development with our courses.</p>
+      </div>
+
+      <h2 class="courses-title">Our Courses</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="course-card course-html">
+            <h3>HTML</h3>
+            <p>Learn how to create the structure of web pages using headings, paragraphs, images, and links.</p>
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#courseModal"
+              data-title="HTML"
+              data-detail="HTML stands for HyperText Markup Language. It creates the structure of a web page using headings, paragraphs, images, and links.">Learn More</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="course-card course-css">
+            <h3>CSS</h3>
+            <p>Learn how to style web pages with colors, fonts, spacing, and attractive layouts.</p>
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#courseModal"
+              data-title="CSS"
+              data-detail="CSS stands for Cascading Style Sheets. It controls the look of a web page: colors, fonts, spacing, and layout.">Learn More</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="course-card course-bootstrap">
+            <h3>Bootstrap</h3>
+            <p>Build responsive websites quickly using Bootstrap's grid system and components.</p>
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#courseModal"
+              data-title="Bootstrap"
+              data-detail="Bootstrap is a popular CSS framework. Its grid system and ready-made components help you build responsive websites quickly.">Learn More</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="course-card course-js">
+            <h3>JavaScript</h3>
+            <p>Make web pages interactive with button clicks, form validation, and dynamic content.</p>
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#courseModal"
+              data-title="JavaScript"
+              data-detail="JavaScript is the programming language of the web. It makes pages interactive with events, form validation, and dynamic content.">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Copyright 2026 Management System</p>
+  </footer>
+
+  <div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="courseModalLabel">Course Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4 id="courseTitle"></h4>
+          <p id="courseDetail" class="mb-0"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="helpModalLabel">Help</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-0">Click <strong>Learn More</strong> on any course to see its details.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("courseModal").addEventListener("show.bs.modal", function (event) {
+      const button = event.relatedTarget;
+      document.getElementById("courseTitle").textContent = button.dataset.title;
+      document.getElementById("courseDetail").textContent = button.dataset.detail;
+    });
+  </script>
+</body>
+</html>
